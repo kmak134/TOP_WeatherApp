@@ -1,0 +1,47 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .searchbar {
+        position: relative;
+
+        input {
+            padding: 10px 40px 10px 20px;
+            font-size: 0.9rem;
+            width: 200px;
+            border-radius: 25px;
+            border: 1px solid black;
+            box-shadow: none;
+            font-family: "Varela Round";
+        }
+
+        a {
+            position: absolute;
+            left: 89%;
+            bottom: 4%;
+            cursor: pointer;
+        }
+    }
+
+    .headerBtnGroup {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        button {
+            border-radius: 22px;
+            padding: 10px 20px;
+            box-shadow: none;
+            border: 2px solid black;
+            font-family: "Varela Round";
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+}

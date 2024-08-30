@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&family=Varela+Round&display=swap");
+html {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgb(244, 238, 255), rgb(166, 177, 225));
+  font-family: "Varela Round";
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+#header .logo {
+  font-size: 1.5rem;
+}
+#header .searchbar {
+  position: relative;
+}
+#header .searchbar input {
+  padding: 10px 40px 10px 20px;
+  font-size: 0.9rem;
+  width: 200px;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: none;
+  font-family: "Varela Round";
+}
+#header .searchbar a {
+  position: absolute;
+  left: 89%;
+  bottom: 4%;
+  cursor: pointer;
+}
+#header .headerBtnGroup {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+#header .headerBtnGroup button {
+  border-radius: 22px;
+  padding: 10px 20px;
+  box-shadow: none;
+  border: 2px solid black;
+  font-family: "Varela Round";
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#todayContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+#dateLocationHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  row-gap: 10px;
+}
+#dateLocationHeader .header {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+#dateLocationHeader .subHeader {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+#todayWeatherInfoContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  -moz-column-gap: 75px;
+       column-gap: 75px;
+  align-items: center;
+}
+
+#mainWeatherInfo #temperatureInfo {
+  display: flex;
+  flex-direction: row;
+  font-size: 3rem;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#mainWeatherInfo #mainText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  row-gap: 5px;
+}
+#mainWeatherInfo #mainText div {
+  font-size: 1.1rem;
+}
+#mainWeatherInfo #mainText #conditions {
+  font-size: 1.4rem;
+}
+
+#infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+}
+#infoGrid .gridItem {
+  text-align: center;
+}
+#infoGrid .gridItem .itemLabel {
+  font-size: 1.2rem;
+}
+#infoGrid .gridItem .itemContent {
+  font-size: 1.7rem;
+}

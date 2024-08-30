@@ -1,0 +1,75 @@
+#todayContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+#dateLocationHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    row-gap: 10px;
+
+    .header {
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+
+    .subHeader {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+}
+
+#todayWeatherInfoContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    column-gap: 75px;
+
+    align-items: center;
+}
+
+#mainWeatherInfo {
+    #temperatureInfo {
+        display: flex;
+        flex-direction: row;
+        font-size: 3rem;
+        column-gap: 10px;
+    }
+
+    #mainText {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        row-gap: 5px;
+
+        div {
+            font-size: 1.1rem;
+        }
+
+        #conditions {
+            font-size: 1.4rem;
+        } 
+    }
+}
+
+#infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+
+    .gridItem {
+        text-align: center;
+        .itemLabel {
+            font-size: 1.2rem;
+        }
+
+        .itemContent {
+            font-size: 1.7rem;
+        }
+    }
+}
