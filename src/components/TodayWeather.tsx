@@ -3,12 +3,10 @@ import clearDayIcon from "../assets/clear-day.svg";
 import clearNightIcon from "../assets/clear-night.svg";
 import cloudyIcon from "../assets/cloudy.svg";
 import fogIcon from "../assets/fog.svg";
-import hailIcon from "../assets/hail.svg";
 import partlyCloudyDayIcon from "../assets/partly-cloudy-day.svg";
 import partyCloudyNightIcon from "../assets/partly-cloudy-night.svg";
 import rainIcon from "../assets/rain.svg";
 import snowIcon from "../assets/snow.svg";
-import thunderIcon from "../assets/thunder-rain.svg";
 import windIcon from "../assets/wind.svg";
 
 interface Props {
@@ -62,7 +60,7 @@ const TodayWeather = ({data, weeklyForecastData}: Props)=> {
     const renderWeeklyForecastRows = () => {
         if (weeklyForecastData) {
             return (
-                weeklyForecastData.weeklyForecast.map((day, index) => (
+                weeklyForecastData.weeklyForecast.map((day) => (
                     <tr className="tableRow">
                         <td className="row-day">{day.date}</td>
                         <td className="row-forecast">
