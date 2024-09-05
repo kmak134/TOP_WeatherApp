@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import searchIcon from '../assets/search.svg'
+import MetricGroup from '../enums/MetricGroup';
 
 interface Props {
-    handleSearchQuery: (input: string) => Promise<void>
+    handleSearchQuery: (input: string) => Promise<void>,
+    setMetricGroup: (input: MetricGroup) => void
 }
 
-const Header = ({handleSearchQuery}: Props) => {
+const Header = ({handleSearchQuery, setMetricGroup}: Props) => {
 
     const [searchBarVal, setSearchBarVal] = useState<string>("");
 
     const handleSearchSubmit = () => {
-        console.log(searchBarVal);
         handleSearchQuery(searchBarVal);
     }
 
@@ -25,6 +26,14 @@ const Header = ({handleSearchQuery}: Props) => {
         }
     }
 
+    const setMetricGroupToMetric = () => {
+        setMetricGroup(MetricGroup.metric);
+    }
+
+    const setMetricGroupToUSA = () => {
+        setMetricGroup(MetricGroup.usa);
+    }
+
     return <div id="header">
         <div className="logo">Weather App</div>
         <div className="searchbar">
@@ -32,8 +41,8 @@ const Header = ({handleSearchQuery}: Props) => {
             <a href="#"><img className="searchIcon" src={searchIcon} width={25} /></a>
         </div>
         <div className="headerBtnGroup">
-            <button>Celcius</button>
-            <button>Fahrenheit</button>
+            <button onClick={setMetricGroupToMetric}>Celcius</button>
+            <button onClick={setMetricGroupToUSA}>Fahrenheit</button>
         </div>
     </div>
 }

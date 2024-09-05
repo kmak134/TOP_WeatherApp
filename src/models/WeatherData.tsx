@@ -19,11 +19,16 @@ interface WeatherData {
     icon: string
 }
 
-interface WeekWeatherData {
-    date: string,
-    icon: string,
-    high: number,
-    low: number
+interface WeeklyForecastData {
+    weeklyForecast: DayDataForWeeklyForecast[]
 }
 
-export type { WeatherData, WeekWeatherData}
+interface DayDataForWeeklyForecast {
+    date: string,
+    icon: string,
+    temp: string,
+    maxTemp: number,
+    minTemp: number
+}
+
+export type { WeatherData, WeeklyForecastData, DayDataForWeeklyForecast}

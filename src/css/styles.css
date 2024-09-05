@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&family=Varela+Round&display=swap");
 html {
   width: 100vw;
-  height: 100vh;
+  background-repeat: no-repeat;
   background-image: linear-gradient(rgb(244, 238, 255), rgb(166, 177, 225));
   font-family: "Varela Round";
 }
@@ -37,8 +37,7 @@ html {
 #header .headerBtnGroup {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
 }
 #header .headerBtnGroup button {
   border-radius: 22px;
@@ -50,6 +49,17 @@ html {
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  #header {
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 30px;
+  }
+  #header .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
 #todayContentContainer {
   display: flex;
   flex-direction: column;
@@ -77,8 +87,7 @@ html {
   display: flex;
   flex-direction: row;
   padding: 25px;
-  -moz-column-gap: 75px;
-       column-gap: 75px;
+  column-gap: 75px;
   align-items: center;
 }
 
@@ -86,8 +95,7 @@ html {
   display: flex;
   flex-direction: row;
   font-size: 3rem;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
 }
 #mainWeatherInfo #mainText {
   display: flex;
@@ -108,12 +116,100 @@ html {
   grid-template-rows: 1fr 1fr;
   gap: 30px;
 }
-#infoGrid .gridItem {
+
+.gridItem {
   text-align: center;
 }
-#infoGrid .gridItem .itemLabel {
+.gridItem .itemLabel {
   font-size: 1.2rem;
 }
-#infoGrid .gridItem .itemContent {
+.gridItem .itemContent {
   font-size: 1.7rem;
 }
+
+#precipInfo {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+#precipType {
+  text-transform: capitalize;
+}
+
+#week-forecast {
+  margin: 50px;
+}
+#week-forecast .header {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+#week-forecast #forecast-table {
+  padding: 30px;
+  row-gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 200px 200px 75px 100px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.tableRow .row-forecast {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}
+.tableRow .row-temp-low, .tableRow .row-temp-high {
+  opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+  #todayContentContainer {
+    padding: 15px 30px;
+  }
+  #todayWeatherInfoContainer {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  #mainWeatherInfo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    align-items: center;
+  }
+}
+@media (max-width: 592px) {
+  #todayContentContainer {
+    padding: 15px;
+  }
+  #dateLocationHeader .header {
+    font-size: 2rem;
+  }
+  #mainWeatherInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  .tableRow {
+    display: grid;
+    grid-template-columns: 200px 100px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "day min-temp" "temp max-temp";
+  }
+  .tableRow .row-day {
+    grid-area: day;
+  }
+  .tableRow .row-forecast {
+    grid-area: temp;
+  }
+  .tableRow .row-temp-low {
+    grid-area: min-temp;
+  }
+  .tableRow .row-temp-high {
+    grid-area: max-temp;
+  }
+}/*# sourceMappingURL=styles.css.map */
